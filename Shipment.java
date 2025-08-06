@@ -35,7 +35,7 @@ public class Shipment{
         return cargoDescription;
     }
 
-    public long getDeclaredValue(){
+    public double getDeclaredValue(){
         return declaredValue;
     }
 
