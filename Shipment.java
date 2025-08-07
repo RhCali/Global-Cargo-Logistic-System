@@ -1,12 +1,12 @@
 public class Shipment{
-    private int shipmentId; //should be read-only
+    private String shipmentId; //should be read-only
     private String originPort;
     private String destinationPort;
     private String status;
     private String cargoDescription;
     private double declaredValue;
 
-    public Shipment(int shipmentId, String originPort, String destinationPort, String status, String cargoDescription, double declaredValue){
+    public Shipment(String shipmentId, String originPort, String destinationPort, String status, String cargoDescription, double declaredValue){
         this.shipmentId = shipmentId;
         this.originPort = originPort;
         this.destinationPort = destinationPort;
@@ -15,7 +15,7 @@ public class Shipment{
         this.declaredValue = declaredValue;
     }
 
-    public int getShipmentId(){
+    public String getShipmentId(){
         return shipmentId;
     }
 
@@ -46,12 +46,12 @@ public class Shipment{
     public String getShipmentDetails(){
         String shipmentDetails = String.format(
             """
-            Shipment ID: %d%n
+            Shipment ID: %s%n
             Origin Port: %s%n
             Destination Port: %s%n
             Status: %s%n
             Cargo Description: %s%n
-            Declared Value: %d%n
+            Declared Value: %f%n
             """,
             getShipmentId(), getOriginPort(), getDestinationPort(), getStatus(), getCargoDescription(), getDeclaredValue()
         );
@@ -70,12 +70,12 @@ public class Shipment{
 
             System.out.printf(
                 """
-                Shipment ID: %d%n
+                Shipment ID: %s%n
                 Origin Port: %s%n
                 Destination Port: %s%n
                 Status: %s%n
                 Cargo Description: %s%n
-                Declared Value: %d%n
+                Declared Value: %f%n
                 """,
                 getShipmentId(), getOriginPort(), getDestinationPort(), getStatus(), getCargoDescription(), getDeclaredValue());
             } 
